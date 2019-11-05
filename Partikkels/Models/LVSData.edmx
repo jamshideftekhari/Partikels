@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Partikkels_F2018Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LVS_Table_final">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaalestedId" Type="varchar" MaxLength="4" />
+          <Property Name="Maalested" Type="varchar" MaxLength="50" />
+          <Property Name="DatoMaerke" Type="datetime" />
+          <Property Name="StofId" Type="varchar" MaxLength="4" />
+          <Property Name="StofNavn" Type="varchar" MaxLength="10" />
+          <Property Name="EnhedId" Type="varchar" MaxLength="4" />
+          <Property Name="Enhed" Type="varchar" MaxLength="10" />
+          <Property Name="Resultat" Type="float" />
+          <Property Name="UdstyrId" Type="varchar" MaxLength="4" />
+          <Property Name="Navn" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="Partikkels_F2018ModelStoreContainer">
+          <EntitySet Name="LVS_Table_final" EntityType="Self.LVS_Table_final" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Partikkels_F2018Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="LVS_Table_final">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaalestedId" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="Maalested" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DatoMaerke" Type="DateTime" Precision="3" />
+          <Property Name="StofId" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="StofNavn" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="EnhedId" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="Enhed" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Resultat" Type="Double" />
+          <Property Name="UdstyrId" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="Navn" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Partikkels_F2018Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LVS_Table_final" EntityType="Self.LVS_Table_final" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Partikkels_F2018ModelStoreContainer" CdmEntityContainer="Partikkels_F2018Entities">
+          <EntitySetMapping Name="LVS_Table_final">
+            <EntityTypeMapping TypeName="Partikkels_F2018Model.LVS_Table_final">
+              <MappingFragment StoreEntitySet="LVS_Table_final">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MaalestedId" ColumnName="MaalestedId" />
+                <ScalarProperty Name="Maalested" ColumnName="Maalested" />
+                <ScalarProperty Name="DatoMaerke" ColumnName="DatoMaerke" />
+                <ScalarProperty Name="StofId" ColumnName="StofId" />
+                <ScalarProperty Name="StofNavn" ColumnName="StofNavn" />
+                <ScalarProperty Name="EnhedId" ColumnName="EnhedId" />
+                <ScalarProperty Name="Enhed" ColumnName="Enhed" />
+                <ScalarProperty Name="Resultat" ColumnName="Resultat" />
+                <ScalarProperty Name="UdstyrId" ColumnName="UdstyrId" />
+                <ScalarProperty Name="Navn" ColumnName="Navn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Measurements2018.Models.Measurement>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Chart</h2>
+        <img src="@Url.Action("OzonChart")" alt="Line Chart using MVC"></img>
+    </div>
+    @*<div class="col-md-4">
+        <h2>Chart</h2>
+        <img src="@Url.Action("CreateLineChart1")" alt="Line Chart using MVC"></img>
+    </div>*@
+    <div class="col-md-6">
+        <h2>Chart</h2>
+        <img src="@Url.Action("OzonChart")" alt="Line Chart using MVC"></img>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <h1>Table Data</h1>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <p><table class="table">
+           <tr>
+               <th>
+                   @Html.DisplayNameFor(model => model.TimeStamp)
+               </th>
+               <th>
+                   @Html.DisplayNameFor(model => model.PlaceCode)
+               </th>
+               <th>
+                   @Html.DisplayNameFor(model => model.PlaceName)
+               </th>
+               <th>
+                   @Html.DisplayNameFor(model => model.StuffName)
+               </th>
+               <th>
+                   @Html.DisplayNameFor(model => model.Result)
+               </th>
+               <th>
+                   @Html.DisplayNameFor(model => model.Unit)
+               </th>
+               <th></th>
+           </tr>
+
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TimeStamp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PlaceCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PlaceName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StuffName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Result)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Unit)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Detail", new {  id=item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </p>
+</div>
+
